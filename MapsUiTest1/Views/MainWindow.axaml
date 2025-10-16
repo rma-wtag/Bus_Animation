@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MapsUiTest1.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:MapsUiTest1.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MapsUiTest1.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaTitleBarHeightHint="0"
+        TransparencyLevelHint="AcrylicBlur"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MapsUiTest1">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="Auto,*">
+        <Border Grid.Row="1" Padding="40 40 40 20" Background="#ffdcd4">
+            <Grid RowDefinitions="*,20,Auto" >
+                <!-- <view:MapView Grid.Row="0" ></view:MapView> -->
+                <!-- <view:VirtualEarthMapView Grid.Row="0" ></view:VirtualEarthMapView> -->
+                <!-- <view:BananiMapsView Grid.Row="0" ></view:BananiMapsView> -->
+                <view:BusAnimationView Grid.Row="0" ></view:BusAnimationView>
+                <Button Grid.Row="2"
+                        Content="Close!" Foreground="White" 
+                        FontWeight="SemiBold" Background="#ea2e54" HorizontalAlignment="Center" 
+                        Click="CloseButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+    
+
+</Window>
